@@ -9,15 +9,12 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark" style="background-color: #000000;">
-    <span class="navbar-brand mb-0 h1">QUIZ</span>
-  </nav>
+
   <div class="tid">Time left = <span id="timer"></span></div>
 
   <div class="quiz-container">
     <div id="quiz"></div>
   </div>
-
   <button id="previous" class="btn btn-primary btn-lg btn-block">Previous Question</button>
   <button id="next" class="btn btn-primary btn-lg btn-block">Next Question</button>
   <button id="submit" class="btn btn-primary btn-lg btn-block">Submit Quiz</button>
@@ -83,7 +80,78 @@
           d: "220km in a year"
         },
         correctAnswer: "a"
-      }
+      },
+      {
+        question: "How long does it take for light from the Sun to reach Earth?",
+        answers: {
+          a: "1 minute",
+          b: "1 hour",
+          c: "8 minutes",
+          d: "3 Hours"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "What planet is closest in size to Earth?",
+        answers: {
+          a: "Saturn",
+          b: "Mars",
+          c: "Venus",
+          d: "Jupiter"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "What planet is nicknamed the ‘Red Planet’?",
+        answers: {
+          a: "Uranus",
+          b: "Neptune",
+          c: "Earth",
+          d: "Mars"
+        },
+        correctAnswer: "d"
+      },
+      {
+        question: "What is the smallest planet in the Solar System?",
+        answers: {
+          a: "Mars",
+          b: "Mercury",
+          c: "Venus",
+          d: "Earth"
+        },
+        correctAnswer: "b"
+      },
+      {
+        question: "What is the hottest planet in the Solar System?",
+        answers: {
+          a: "Venus",
+          b: "Saturn",
+          c: "Uranus",
+          d: "Mars"
+        },
+        correctAnswer: "a"
+      },
+      {
+        question: "What planet is closest to the Sun?",
+        answers: {
+          a: "Neptune",
+          b: "Jupiter",
+          c: "Mercury",
+          d: "Mars"
+        },
+        correctAnswer: "c"
+      },
+      {
+        question: "What is the third planet from the Sun?",
+        answers: {
+          a: "Mars",
+          b: "Mercury",
+          c: "Venus",
+          d: "Earth"
+        },
+        correctAnswer: "d"
+      },
+
     ];
 
     function buildQuiz() {
@@ -177,30 +245,36 @@
     submitButton.addEventListener("click", showResults);
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
-  })();
 
-
-  document.getElementById('timer').innerHTML =
-    01 + ":" + 00;
-  startTimer();
-
-  function startTimer() {
-    const presentTime = document.getElementById('timer').innerHTML;
-    let timeArray = presentTime.split(/[:]+/);
-    let m = timeArray[0];
-    let s = checkSecond((timeArray[1] - 1));
-    if(s==59){m=m-1}
 
     document.getElementById('timer').innerHTML =
-      m + ":" + s;
-    setTimeout(startTimer, 1000);
-  }
+      01 + ":" + 25;
+    startTimer();
 
-  function checkSecond(sec) {
-    if (sec < 10 && sec >= 0) {sec = "0" + sec};
-    if (sec < 0) {sec = "59"};
-    return sec;
-  }
+    function startTimer() {
+      const presentTime = document.getElementById('timer').innerHTML;
+      let timeArray = presentTime.split(/[:]+/);
+      let m = timeArray[0];
+      let s = checkSecond((timeArray[1] - 1));
+      if (s == 59) {
+        m = m - 1
+      }
+
+      document.getElementById('timer').innerHTML =
+        m + ":" + s;
+      setTimeout(startTimer, 1000);
+    }
+
+    function checkSecond(sec) {
+      if (sec < 10 && sec >= 0) {
+        sec = "0" + sec
+      };
+      if (sec < 0) {
+        sec = "59"
+      };
+      return sec;
+    }
+  })();
 </script>
 
 </html>

@@ -74,7 +74,8 @@ body {
 }
 
 .tid{
-  color: blue;
-  font-size:20px;
+  font-size: 45px;
+  margin-top: 40px;
+  color: #2187ff;
   text-align:center;
 }
