@@ -9,13 +9,16 @@
 </head>
 
 <body>
-  <h1>Welcome to quiz</h1>
+  <nav class="navbar navbar-dark" style="background-color: #000000;">
+    <span class="navbar-brand mb-0 h1">QUIZ</span>
+  </nav>
   <div class="quiz-container">
     <div id="quiz"></div>
   </div>
-  <button id="previous">Previous Question</button>
-  <button id="next">Next Question</button>
-  <button id="submit">Submit Quiz</button>
+
+  <button id="previous" class="btn btn-primary btn-lg btn-block">Previous Question</button>
+  <button id="next" class="btn btn-primary btn-lg btn-block">Next Question</button>
+  <button id="submit" class="btn btn-primary btn-lg btn-block">Submit Quiz</button>
   <div id="results"></div>
 
 
@@ -89,7 +92,7 @@
         for (letter in currentQuestion.answers) {
           answers.push(
             `<label>
-               <input type="radio" name="question${questionNumber}" value="${letter}">
+               <input type="checkbox" name="question${questionNumber}" value="${letter}">
                 ${letter} :
                 ${currentQuestion.answers[letter]}
              </label>`
@@ -124,7 +127,7 @@
         }
       });
 
-      resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+      resultsContainer.innerHTML = `<span class="res"> ${numCorrect} out of ${myQuestions.length}`;
     }
 
 
@@ -173,6 +176,6 @@
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
   })();
-
 </script>
+
 </html>
