@@ -219,7 +219,7 @@ console.log(alert);
 
 
   document.getElementById('timer').innerHTML =
-    01 + ":" + 25;
+    01 + ":" + 45;
   startTimer();
 
   function startTimer() {
