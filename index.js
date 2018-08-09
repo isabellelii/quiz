@@ -1,4 +1,4 @@
-alert('Hey you, ready for a quiz?');
+alert('Hey, get ready. The quiz timer start as soon you click OK!');
 console.log(alert);
 
 (function() {
