@@ -12,6 +12,8 @@
   <nav class="navbar navbar-dark" style="background-color: #000000;">
     <span class="navbar-brand mb-0 h1">QUIZ</span>
   </nav>
+  <div class="tid">Time left = <span id="timer"></span></div>
+
   <div class="quiz-container">
     <div id="quiz"></div>
   </div>
@@ -176,6 +178,29 @@
     previousButton.addEventListener("click", showPreviousSlide);
     nextButton.addEventListener("click", showNextSlide);
   })();
+
+
+  document.getElementById('timer').innerHTML =
+    01 + ":" + 00;
+  startTimer();
+
+  function startTimer() {
+    const presentTime = document.getElementById('timer').innerHTML;
+    let timeArray = presentTime.split(/[:]+/);
+    let m = timeArray[0];
+    let s = checkSecond((timeArray[1] - 1));
+    if(s==59){m=m-1}
+
+    document.getElementById('timer').innerHTML =
+      m + ":" + s;
+    setTimeout(startTimer, 1000);
+  }
+
+  function checkSecond(sec) {
+    if (sec < 10 && sec >= 0) {sec = "0" + sec};
+    if (sec < 0) {sec = "59"};
+    return sec;
+  }
 </script>
 
 </html>
