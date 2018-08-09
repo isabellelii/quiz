@@ -10,8 +10,81 @@
   <h1>Welcome to quiz</h1>
 
   <div id="quiz"></div> <!-- Contains the quiz-->
-  <button id="submit"></button> <!-- Submit the quiz-->
+  <button id="submit"> Submit </button> <!-- Submit the quiz-->
   <div id="results"></div> <!-- Show the result of the quiz-->
 
   </body>
+  <script>
+
+  alert('Hey you, ready for a quiz?');
+  console.log(alert);
+
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+
+  const myQuestions = [
+    {
+      question: "How many planets are there in our solar system?",
+      answers: {
+        a: "8",
+        b: "10",
+        c: "9",
+        d: "11"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "How long does it take for light from the Sun to reach Earth?",
+      answers: {
+        a: "1 minute",
+        b: "1 hour",
+        c: "8 minutes",
+        d: "3 Hours"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "How old is the solar system?",
+      answers: {
+        a: "5 million years",
+        b: "5 billion years",
+        c: "500 billion years",
+        d: "5 billion years"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "What's the shape of the solar system?",
+      answers: {
+        a: "It's squashed",
+        b: "It's round",
+        c: "It's like a donut",
+        d: "It's a horseshoe shape"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "How fast does the Sun travel?",
+      answers: {
+        a: "220km in a second",
+        b: "220km in an minute",
+        c: "220 km in a hour",
+        d: "220km in a year"
+      },
+      correctAnswer: "a"
+    }
+  ];
+
+  function quizContainer() {};
+
+  function resultsContainer(){};
+
+
+
+  buildQuiz();
+
+  submitButton.addEventListener('click', showResults);
+
+  </script>
 </html>
