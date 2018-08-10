@@ -13,22 +13,12 @@ console.log(alert);
       correctAnswer: "a"
     },
     {
-      question: "How long does it take for light from the Sun to reach Earth?",
-      answers: {
-        a: "1 minute",
-        b: "1 hour",
-        c: "8 minutes",
-        d: "3 Hours"
-      },
-      correctAnswer: "c"
-    },
-    {
       question: "How old is the solar system?",
       answers: {
         a: "5 million years",
         b: "5 billion years",
         c: "500 billion years",
-        d: "5 billion years"
+        d: "50 billion years"
       },
       correctAnswer: "b"
     },
@@ -219,7 +209,7 @@ console.log(alert);
 
 
   document.getElementById('timer').innerHTML =
-    01 + ":" + 45;
+    02 + ":" + 15;
   startTimer();
 
   function startTimer() {
