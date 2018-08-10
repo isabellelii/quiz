@@ -209,7 +209,7 @@ console.log(alert);
 
 
   document.getElementById('timer').innerHTML =
-    02 + ":" + 15;
+    02 + ":" + 10;
   startTimer();
 
   function startTimer() {
